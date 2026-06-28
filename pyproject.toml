@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "question_normalizer"
+version = "0.1.0"
+description = "Pure-Python normalization of scraped/third-party question dicts for LMS storage."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Proprietary" }
+authors = [{ name = "inoesis" }]
+keywords = ["lms", "html", "sanitization", "katex", "latex"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Text Processing :: Markup :: HTML",
+]
+dependencies = [
+    # bleach[css] pulls in tinycss2 for the CSS allowlist sanitizer.
+    "bleach[css]>=6.1,<7",
+    "lxml>=5.1,<6",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-cov>=4.1",
+]
+
+[project.urls]
+Homepage = "https://github.com/inoesis/question_normalizer"
+Issues = "https://github.com/inoesis/question_normalizer/issues"
+
+[tool.setuptools.packages.find]
+include = ["question_normalizer*"]
+exclude = ["tests*"]
+
+[tool.setuptools.package-data]
+question_normalizer = ["py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

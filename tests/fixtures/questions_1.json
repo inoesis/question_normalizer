@@ -1,0 +1,148 @@
+{
+  "questions": [
+    {
+      "question": {
+        "text": "<div style=\"font-size:15px;line-height:1.7;margin:0;\">In a dorsiventral leaf, location of spongy tissue and palisade tissue is respectively on the ..... surfaces.</div>",
+        "type": "multiple_choice",
+        "explanation": "Dorsiventral (bifacial) leaves are commonly horizontal in orientation with distinct upper (adaxial) and lower (abaxial) surface. Mesophyll is distinguishable into palisade and spongy tissues. Spongy tissue can be seen at the lower side(abaxial) and palisade tissue is usually restricted to the upper (adaxial) side.",
+        "render_type": "mcq"
+      },
+      "answers": [
+        "Adaxial and abaxial",
+        "Adaxial and adaxial",
+        "Abaxial and adaxial",
+        "Abaxial and abaxial"
+      ],
+      "correct_answers": [
+        2
+      ],
+      "points": 1,
+      "quiz_question_tags": [
+        "Biology",
+        "Anatomy of Flowering Plants"
+      ],
+      "order": 0,
+      "QB_id": "NEET_dicotyledonous-leaf-and-monocotyledonous-leaf_0001"
+    },
+    {
+      "question": {
+        "text": "<div style=\"border-left:4px solid #c0392b;padding:10px 14px;margin-bottom:10px;background:#fff5f5;border-radius:4px;\"><div style=\"font-size:11px;font-weight:700;letter-spacing:1px;color:#c0392b;margin-bottom:5px;\">ASSERTION</div><div style=\"font-size:15px;line-height:1.7;margin:0;\">Xerophytic leaves may contain stomatal crypts or sunken stomata.</div></div><div style=\"border-left:4px solid #2980b9;padding:10px 14px;background:#f0f8ff;border-radius:4px;\"><div style=\"font-size:11px;font-weight:700;letter-spacing:1px;color:#2980b9;margin-bottom:5px;\">REASON</div><div style=\"font-size:15px;line-height:1.7;margin:0;\">Spongy parenchyma is more in xerophytic leaves.</div></div>",
+        "type": "multiple_choice",
+        "explanation": "Assertion is true: Xerophytic leaves do contain stomatal crypts or sunken stomata as an adaptation to reduce water loss. Reason is false: Spongy parenchyma is actually REDUCED in xerophytic leaves (not increased). The correct explanation for sunken stomata is that they are protected by being sunken below the leaf surface and often covered by accessory/subsidiary cells, which reduces air exposure and water loss from the stomatal opening. Therefore, the Assertion is correct but the Reason is incorrect (Option 3 is correct).",
+        "render_type": "assertion_reason"
+      },
+      "answers": [
+        "Both Assertion and Reason are correct and Reason is the correct explanation of the Assertion.",
+        "Both Assertion and Reason are correct but Reason is not the correct explanation of the Assertion.",
+        "Assertion is correct but Reason is incorrect.",
+        "Both Assertion and Reason are incorrect"
+      ],
+      "correct_answers": [
+        2
+      ],
+      "points": 1,
+      "quiz_question_tags": [
+        "Biology",
+        "Anatomy of Flowering Plants"
+      ],
+      "order": 1,
+      "QB_id": "NEET_dicotyledonous-leaf-and-monocotyledonous-leaf_0030"
+    },
+    {
+      "question": {
+        "text": "<div style=\"font-size:15px;line-height:1.7;margin:0;\" style=\"margin-bottom:8px;\">Match the columns I and II.</div><table style=\"width:100%;border-collapse:collapse;margin-top:8px;\"><tr><th style=\"text-align:left;padding:7px 10px;background:#f0f0f0;font-weight:600;font-size:13px;width:50%;border:1px solid #ddd;\">Column A</th><th style=\"text-align:left;padding:7px 10px;background:#f0f0f0;font-weight:600;font-size:13px;width:50%;border:1px solid #ddd;\">Column B</th></tr><tr><td style=\"padding:6px 10px;vertical-align:top;border:1px solid #ddd;font-size:15px;\"><p style=\"margin:3px 0;\">A. Dicotyledonous leaf</p><p style=\"margin:3px 0;\">B. Monocotyledonous leaf</p></td><td style=\"padding:6px 10px;vertical-align:top;border:1px solid #ddd;font-size:15px;\"><p style=\"margin:3px 0;\">P. Isobilateral</p><p style=\"margin:3px 0;\">Q. Reticulate venation</p><p style=\"margin:3px 0;\">R. Parallel venation</p><p style=\"margin:3px 0;\">S. Dorsiventral</p><p style=\"margin:3px 0;\">T. Bulliform cells</p></td></tr></table>",
+        "type": "multiple_choice",
+        "explanation": "Dicotyledonous leaf - Reticulate venation, DorsiventralMonocotyledonous leaf - Isobilateral, Parallel venation, Bulliform cells.",
+        "render_type": "match_columns"
+      },
+      "answers": [
+        "$\\mathrm{A}-\\mathrm{P}, \\mathrm{Q}, ; \\mathrm{B}-\\mathrm{R}, \\mathrm{S}, \\mathrm{T}$",
+        "$\\mathrm{A}-\\mathrm{Q}, \\mathrm{S}, ; \\mathrm{B}-\\mathrm{P}, \\mathrm{R}, \\mathrm{T}$",
+        "$\\mathrm{A}-\\mathrm{P}, \\mathrm{R}, \\mathrm{T} ; \\mathrm{B}-\\mathrm{Q}, \\mathrm{S}$",
+        "${\\rm{A - Q, S, T; B - P, R}}$"
+      ],
+      "correct_answers": [
+        1
+      ],
+      "points": 1,
+      "quiz_question_tags": [
+        "Biology",
+        "Anatomy of Flowering Plants"
+      ],
+      "order": 2,
+      "QB_id": "NEET_dicotyledonous-leaf-and-monocotyledonous-leaf_0009"
+    },
+    {
+      "question": {
+        "text": "<div style=\"border-left:4px solid #27ae60;padding:10px 14px;margin-bottom:10px;background:#f0fff4;border-radius:4px;\"><div style=\"font-size:11px;font-weight:700;letter-spacing:1px;color:#27ae60;margin-bottom:5px;\">STATEMENT I</div><div style=\"font-size:15px;line-height:1.7;margin:0;\">Decomposition is a process in which the detritus is degraded into simpler substances by microbes.</div></div><div style=\"border-left:4px solid #27ae60;padding:10px 14px;margin-bottom:10px;background:#f0fff4;border-radius:4px;\"><div style=\"font-size:11px;font-weight:700;letter-spacing:1px;color:#27ae60;margin-bottom:5px;\">STATEMENT II</div><div style=\"font-size:15px;line-height:1.7;margin:0;\">Decomposition is faster if the detritus is rich in lignin and chitin.</div></div>",
+        "type": "multiple_choice",
+        "explanation": "Decomposition is a process in which detritus is degraded into simpler substances by microbes. In a particular climatic condition, decomposition rate is slower if detritus is rich in lignin and chitin, and quicker, if detritus is rich in nitrogen and water-soluble substances like sugars.",
+        "render_type": "statement"
+      },
+      "answers": [
+        "Both Statement I and Statement II are incorrect",
+        "Statement I is correct but Statement II is incorrect",
+        "Statement I is incorrect but Statement II is correct",
+        "Both Statement I and Statement II are correct"
+      ],
+      "correct_answers": [
+        1
+      ],
+      "points": 1,
+      "quiz_question_tags": [
+        "Biology",
+        "Ecosystem"
+      ],
+      "order": 3,
+      "QB_id": "NEET_decomposition_0038"
+    },
+    {
+      "question": {
+        "text": "<div style=\"background:#f8f9fa;border:1px solid #e0e0e0;border-radius:6px;padding:10px 14px;\"><p style=\"margin:4px 0;font-size:15px;line-height:1.6;\">Identify $i$ and ii respectively.</p><p style=\"margin:4px 0;font-size:15px;line-height:1.6;\">i. Mesophyll cells differentiated into Palisade and spongy</p><p style=\"margin:4px 0;font-size:15px;line-height:1.6;\">ii. Mesophyll cells undifferentiated into Palisade and spongy</p></div>",
+        "type": "multiple_choice",
+        "explanation": "Statement ' i ' is characteristics of dicot (mango) and statement 'ii' is characteristics of monocot(maize).",
+        "render_type": "multi_statement"
+      },
+      "answers": [
+        "Mango, Maize",
+        "Maize, Mango",
+        "Sunflower, Mango",
+        "Maize, sunflower"
+      ],
+      "correct_answers": [
+        0
+      ],
+      "points": 1,
+      "quiz_question_tags": [
+        "Biology",
+        "Anatomy of Flowering Plants"
+      ],
+      "order": 4,
+      "QB_id": "NEET_dicotyledonous-leaf-and-monocotyledonous-leaf_0004"
+    },
+    {
+      "question": {
+        "text": "<div style=\"text-align:center;margin-bottom:12px;\"><img src=\"https://cdn.yourapp.com/NEET/a33dee17-cce2-48f4-bc10-f44be4a3ef5a_question.png\" style=\"max-width:100%;border-radius:6px;\" loading=\"lazy\" onerror=\"this.style.opacity='0.3'\"></div><div style=\"font-size:15px;line-height:1.7;margin:0;\" style=\"margin-bottom:8px;\">Carefully observe the given diagram and select the correct option.</div><div style=\"background:#f8f9fa;border:1px solid #e0e0e0;border-radius:6px;padding:10px 14px;\"><p style=\"margin:4px 0;font-size:15px;line-height:1.6;\">I. The epidermis which covers both adaxial epidermis and abaxial epidermis of the leaf has a conspicuous cuticle.</p><p style=\"margin:4px 0;font-size:15px;line-height:1.6;\">II. Mesophyll possesses chloroplasts and carry out photosynthesis, is made up of parenchyma.</p><p style=\"margin:4px 0;font-size:15px;line-height:1.6;\">III. Vascular bundles are surrounded by a layer of thin walled bundle sheath cells.</p><p style=\"margin:4px 0;font-size:15px;line-height:1.6;\">IV. The tissue between the upper and the lower epidermis is called the mesophyll.</p></div>",
+        "type": "multiple_choice",
+        "explanation": "The given diagram represents transverse section of dicot leaf. Bundle sheath cells are thick walled.",
+        "render_type": "figure"
+      },
+      "answers": [
+        "II, III, IV only",
+        "I, II, IV only",
+        "I, II, III, only",
+        "All of these"
+      ],
+      "correct_answers": [
+        1
+      ],
+      "points": 1,
+      "quiz_question_tags": [
+        "Biology",
+        "Anatomy of Flowering Plants"
+      ],
+      "order": 5,
+      "QB_id": "NEET_dicotyledonous-leaf-and-monocotyledonous-leaf_0013"
+    }
+  ]
+}
