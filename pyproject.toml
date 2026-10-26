@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "question_normalizer"
-version = "0.1.0"
+version = "0.1.1"
 description = "Pure-Python normalization of scraped/third-party question dicts for LMS storage."
 readme = "README.md"
 requires-python = ">=3.10"
@@ -21,7 +21,7 @@ classifiers = [
 dependencies = [
     # bleach[css] pulls in tinycss2 for the CSS allowlist sanitizer.
     "bleach[css]>=6.1,<7",
-    "lxml>=5.1,<6",
+    "lxml>=6.1.0,<7",  # 6.1.0 fixes PYSEC-2026-87 (local file read)
 ]
 
 [project.optional-dependencies]
