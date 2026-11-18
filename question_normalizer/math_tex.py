@@ -62,6 +62,68 @@ def _find_next_span(text: str, start: int) -> tuple[int, int, str, bool] | None:
     return best
 
 
+# QUIC-209: math spans are set aside while the HTML stages run, so a "<"
+# inside them ("0<x") is never read as the start of a tag. The placeholder
+# uses Private Use Area characters, which no question legitimately contains.
+_PH_OPEN, _PH_CLOSE = "\ue000", "\ue001"
+_PLACEHOLDER_RE = re.compile(f"{_PH_OPEN}(\\d+){_PH_CLOSE}")
+
+
+# A real tag (or comment) written out in full. "0<x \\leq 2" has no closing
+# ">" so it is not one; "<b>", "</sup>", "<br/>" are.
+# "<\s*" because html_repair turns "< img ...>" into a real <img> tag.
+_MARKUP_RE = re.compile(r"<\s*(?:/?[a-zA-Z][a-zA-Z0-9-]*(?:[\s/][^<>]*)?/?>|!--)")
+# Text ending inside an open tag, e.g. '<img alt="' - a "$" there belongs to
+# an attribute, not to math.
+_OPEN_TAG_AT_END_RE = re.compile(r"<\s*[a-zA-Z/!][^>]*$")
+
+
+def protect(text: str) -> tuple[str, list[str]]:
+    """Replace each math span that is plainly math with a placeholder.
+
+    Only spans in text (not inside a tag) and with no real HTML in or across
+    them are set aside: those are where a "<" ("0<x") would otherwise be read
+    as a tag. Anything else - a "$" inside an attribute, currency like "$5 <b>x</b>
+    $10", "$x<sup>2</sup>$" - is left for the HTML stages, as before.
+    Returns ``(text_with_placeholders, spans)``. Any U+E000/U+E001 already in
+    the input is dropped, so only our own placeholders reach restore().
+    """
+    text = text.replace(_PH_OPEN, "").replace(_PH_CLOSE, "")
+    spans: list[str] = []
+    parts: list[str] = []
+    pos = 0
+    while (span := _find_next_span(text, pos)) is not None:
+        open_start, close_end, _inner, _display = span
+        parts.append(text[pos:open_start])
+        raw = text[open_start:close_end]
+        # Skip it if it starts inside a tag, or a tag starts inside it (even
+        # one that only closes after the span: "$<img alt="$...">").
+        tag = _MARKUP_RE.search(text, open_start)
+        if _OPEN_TAG_AT_END_RE.search("".join(parts)) or (tag and tag.start() < close_end):
+            parts.append(raw)
+        else:
+            parts.append(f"{_PH_OPEN}{len(spans)}{_PH_CLOSE}")
+            spans.append(raw)
+        pos = close_end
+    parts.append(text[pos:])
+    return "".join(parts), spans
+
+
+def restore(text: str, spans: list[str]) -> str:
+    """Put the spans back. ``spans`` arrive already cleaned as text (see
+    pipeline._clean_html). A placeholder can't end up inside a tag - protect()
+    skips spans there - but if one ever did, its quotes are escaped too, so it
+    could never close the attribute."""
+
+    def _back(m: re.Match[str]) -> str:
+        span = spans[int(m.group(1))]
+        if _OPEN_TAG_AT_END_RE.search(text, 0, m.start()):
+            span = span.replace('"', "&quot;")
+        return span
+
+    return _PLACEHOLDER_RE.sub(_back, text)
+
+
 _RM_RE = re.compile(r"\\rm\s*\{")
 _STRAY_SEP_RE = re.compile(r",\s*;")
 _MULTISPACE_RE = re.compile(r"\s{2,}")
@@ -109,6 +171,12 @@ def _try_balanced(text: str) -> bool:
             continue
         i += 1
     return True
+
+
+def is_balanced(text: str) -> bool:
+    """True when every math delimiter in ``text`` is closed. A stored question
+    cut short at a "<" inside math (QUIC-209) fails this check."""
+    return _try_balanced(text)
 
 
 def normalize(text: str, qid: str | None = None) -> str:

@@ -16,9 +16,23 @@ from typing import Any
 from . import html_repair, layout, math_tex, sanitizer, validation
 
 
+def _clean_html(text: str) -> str:
+    """Stages 1+2 with math spans set aside (QUIC-209, see math_tex.protect).
+
+    Each span still goes through stages 1+2, as text: only its "<" and ">"
+    are escaped first, so they can't start a tag. Entities, control
+    characters and line endings come out exactly as they always did."""
+    text, spans = math_tex.protect(text)
+    text = sanitizer.sanitize(html_repair.repair(text))
+    spans = [
+        sanitizer.sanitize(html_repair.repair(s.replace("<", "&lt;").replace(">", "&gt;")))
+        for s in spans
+    ]
+    return math_tex.restore(text, spans)
+
+
 def _normalize_html_text(text: str, render_type: str | None) -> str:
-    text = html_repair.repair(text)
-    text = sanitizer.sanitize(text)
+    text = _clean_html(text)
     text = layout.preserve(text, render_type=render_type)
     text = math_tex.normalize(text)
     return text
@@ -28,8 +42,7 @@ def _normalize_answer(text: str) -> str:
     # Answers go through 1+2+4 but skip the layout stage — they aren't
     # block-level question bodies. Stage 2 still permits inline tags
     # commonly used in answer markup (b, sub, sup, etc).
-    text = html_repair.repair(text)
-    text = sanitizer.sanitize(text)
+    text = _clean_html(text)
     text = math_tex.normalize(text)
     return text
 
