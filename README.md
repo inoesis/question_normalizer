@@ -24,6 +24,10 @@ Each input dict must have at minimum `question` (HTML string or `{text, ...}` di
 
 ## Pipeline
 
+Math spans (`$…$`, `$$…$$`, `\(…\)`, `\[…\]`) are set aside while stages 1 and 2
+run, so a `<` inside math (`0<x`) is never read as a tag, then put back with
+`<`, `>`, `&` as entities (the client decodes them before KaTeX).
+
 1. `html_repair` — merge duplicate `style` attrs, balance/close tags
 2. `sanitizer`  — bleach + tinycss2 allowlist (tag / attr / CSS property)
 3. `layout`    — light per-type guarantees (e.g. `alt`/`loading` on `<img>`)
